@@ -1,5 +1,5 @@
 // assets/js/app.js
-// PortSpace - Main JavaScript File (Loader Fixed)
+// PortSpace - Main JavaScript File
 
 /**
  * Wait for DOM to load
