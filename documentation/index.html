@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Title -->
+  <title>PortSpace - Documentation</title>
+
+  <!-- SEO Meta -->
+  <meta name="description"
+    content="PortSpace documentation - Complete guide for customizing your premium portfolio template.">
+  <meta name="author" content="PriHarhs Design">
+
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#6366F1">
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 (FIXED) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- Documentation CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- FALLBACK: Agar CDN fail ho to local -->
+  <style>
+    /* Fallback icons agar font awesome load na ho */
+    .fa-regular.fa-book-open:before {
+      content: "📚";
+    }
+
+    .fa-regular.fa-star:before {
+      content: "⭐";
+    }
+
+    .fa-regular.fa-folder-tree:before {
+      content: "📁";
+    }
+
+    .fa-regular.fa-palette:before {
+      content: "🎨";
+    }
+
+    .fa-regular.fa-sliders:before {
+      content: "⚙️";
+    }
+
+    .fa-regular.fa-circle-half-stroke:before {
+      content: "🌓";
+    }
+
+    .fa-regular.fa-layer-group:before {
+      content: "📑";
+    }
+
+    .fa-regular.fa-heart:before {
+      content: "❤️";
+    }
+
+    .fa-regular.fa-headset:before {
+      content: "🎧";
+    }
+
+    .fa-regular.fa-clock-rotate-left:before {
+      content: "⏰";
+    }
+
+    .fa-regular.fa-circle-check:before {
+      content: "✓";
+    }
+
+    .fa-regular.fa-eye:before {
+      content: "👁️";
+    }
+
+    .fa-regular.fa-envelope:before {
+      content: "✉️";
+    }
+
+    .fa-regular.fa-code:before {
+      content: "</>";
+    }
+
+    .fa-regular.fa-mobile-screen:before {
+      content: "📱";
+    }
+
+    .fa-regular.fa-bolt:before {
+      content: "⚡";
+    }
+
+    .fa-regular.fa-file-lines:before {
+      content: "📄";
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="doc-header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M80 0H20C8.9543 0 0 8.9543 0 20V80C0 91.0457 8.9543 100 20 100H80C91.0457 100 100 91.0457 100 80V20C100 8.9543 91.0457 0 80 0Z"
+              fill="url(#paint0_linear_612_7)" />
+            <path
+              d="M32 75V25H52C59.5 25 65.5 27 70 31C74.5 35 76.5 40.5 76.5 47.5C76.5 54.5 74.5 60 70 64C65.5 68 59.5 70 52 70H44V75H32ZM44 40V58H51.5C55 58 57.8 56.8 59.8 54.5C61.8 52.2 62.8 49 62.8 45C62.8 41 61.8 37.8 59.8 35.5C57.8 33.2 55 32 51.5 32H44V40Z"
+              fill="white" />
+            <defs>
+              <linearGradient id="paint0_linear_612_7" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#6366F1" />
+                <stop offset="1" stop-color="#8B5CF6" />
+              </linearGradient>
+            </defs>
+          </svg>
+
+          <span class="logo-text">PortSpace <span>v1.0.0</span></span>
+        </div>
+        <div class="header-links">
+          <a href="../index.html" class="btn-outline"><i class="fa-regular fa-eye"></i> Live Preview</a>
+          <a href="mailto:priharshdesign@gmail.com" class="btn-primary"><i class="fa-regular fa-envelope"></i>
+            Support</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main class="doc-main">
+    <div class="container">
+      <div class="doc-grid">
+
+        <!-- ===== SIDEBAR ===== -->
+        <aside class="doc-sidebar">
+          <div class="sidebar-inner">
+            <ul class="sidebar-nav">
+              <li><a href="#intro" class="active"><i class="fa-regular fa-book-open"></i> Introduction</a></li>
+              <li><a href="#features"><i class="fa-regular fa-star"></i> Features</a></li>
+              <li><a href="#structure"><i class="fa-regular fa-folder-tree"></i> File Structure</a></li>
+              <li><a href="#scss"><i class="fa-regular fa-palette"></i> SCSS Guide</a></li>
+              <li><a href="#variables"><i class="fa-regular fa-sliders"></i> Variables</a></li>
+              <li><a href="#themes"><i class="fa-regular fa-circle-half-stroke"></i> Dark/Light Mode</a></li>
+              <li><a href="#sections"><i class="fa-regular fa-layer-group"></i> Sections</a></li>
+              <li><a href="#credits"><i class="fa-regular fa-heart"></i> Credits</a></li>
+              <li><a href="#support"><i class="fa-regular fa-headset"></i> Support</a></li>
+            </ul>
+          </div>
+        </aside>
+
+        <!-- ===== CONTENT ===== -->
+        <div class="doc-content">
+
+          <!-- Intro Section -->
+          <section id="intro" class="doc-section">
+            <h1><i class="fa-regular fa-book-open"></i> Introduction</h1>
+
+            <div class="alert success">
+              <i class="fa-regular fa-circle-check"></i>
+              <div>
+                <strong>Thank you for purchasing PortSpace!</strong>
+                <p>For questions: <a href="mailto:priharshdesign@gmail.com">priharshdesign@gmail.com</a></p>
+              </div>
+            </div>
+
+            <div class="logo-large">
+              <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M80 0H20C8.9543 0 0 8.9543 0 20V80C0 91.0457 8.9543 100 20 100H80C91.0457 100 100 91.0457 100 80V20C100 8.9543 91.0457 0 80 0Z"
+                  fill="url(#paint0_linear_612_7)" />
+                <path
+                  d="M32 75V25H52C59.5 25 65.5 27 70 31C74.5 35 76.5 40.5 76.5 47.5C76.5 54.5 74.5 60 70 64C65.5 68 59.5 70 52 70H44V75H32ZM44 40V58H51.5C55 58 57.8 56.8 59.8 54.5C61.8 52.2 62.8 49 62.8 45C62.8 41 61.8 37.8 59.8 35.5C57.8 33.2 55 32 51.5 32H44V40Z"
+                  fill="white" />
+                <defs>
+                  <linearGradient id="paint0_linear_612_7" x1="0" y1="0" x2="100" y2="100"
+                    gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#6366F1" />
+                    <stop offset="1" stop-color="#8B5CF6" />
+                  </linearGradient>
+                </defs>
+              </svg>
+
+              <div>
+                <h2>PortSpace</h2>
+                <p>Premium Portfolio Template</p>
+              </div>
+            </div>
+
+            <p>PortSpace is a premium portfolio template built with <span class="badge">SCSS</span> and <span
+                class="badge">JavaScript</span>. It features dark/light mode toggle and fully customizable SCSS
+              architecture.</p>
+
+            <div class="stats">
+              <div class="stat"><span class="num">🌓</span> <span>Dark/Light Mode</span></div>
+              <div class="stat"><span class="num">100%</span> <span>Customizable</span></div>
+              <div class="stat"><span class="num">📱</span> <span>Responsive</span></div>
+            </div>
+          </section>
+
+          <!-- Features Section -->
+          <section id="features" class="doc-section">
+            <h2><i class="fa-regular fa-star"></i> Features</h2>
+
+            <div class="features">
+              <div class="feature">
+                <i class="fa-regular fa-circle-half-stroke"></i>
+                <h4>Dark/Light Mode</h4>
+                <p>Built-in theme switcher with localStorage</p>
+              </div>
+              <div class="feature">
+                <i class="fa-regular fa-code"></i>
+                <h4>SCSS Variables</h4>
+                <p>Easy color & typography customization</p>
+              </div>
+              <div class="feature">
+                <i class="fa-regular fa-mobile-screen"></i>
+                <h4>Fully Responsive</h4>
+                <p>Perfect on all devices</p>
+              </div>
+              <div class="feature">
+                <i class="fa-regular fa-bolt"></i>
+                <h4>Fast Loading</h4>
+                <p>Optimized code</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- File Structure -->
+          <section id="structure" class="doc-section">
+            <h2><i class="fa-regular fa-folder-tree"></i> File Structure</h2>
+
+            <pre class="code-block">
+PortSpace/
+│
+├── index.html                    # Main HTML file
+│
+├── 📁 assets/
+│   ├── 📁 css/
+│   │   ├── main.css              # Main CSS (compiled)
+│   │   └── bootstrap.min.css     # Bootstrap core
+│   │
+│   ├── 📁 js/
+│   │   ├── app.js                # Custom JS
+│   │   └── bootstrap.min.js      # Bootstrap JS
+│   │
+│   ├── 📁 scss/
+│   │   ├── main.scss             # Main SCSS
+│   │   ├── _variables.scss       # Colors & variables
+│   │   └── _more.scss            # Dark mode + styles
+│   │
+│   └── 📁 images/                 # All images
+│
+└── 📁 documentation/              # This documentation</pre>
+          </section>
+
+          <!-- SCSS Guide -->
+          <section id="scss" class="doc-section">
+            <h2><i class="fa-regular fa-palette"></i> SCSS Guide</h2>
+
+            <h3>Change Colors</h3>
+            <pre class="code-block">
+// assets/scss/_variables.scss
+:root {
+    --primary-500: #6366F1;      // Main color
+    --accent-500: #8B5CF6;       // Accent color
+}
+
+[data-theme="light"] {
+    --bg-primary: #ffffff;
+    --text-primary: #0a0a0a;
+}</pre>
+
+            <h3>Compile SCSS</h3>
+            <pre class="code-block">
+# Using VS Code Live Sass Compiler
+1. Install "Live Sass Compiler"
+2. Click "Watch Sass"
+
+# Command line
+cd PortSpace
+sass --watch assets/scss/main.scss:assets/css/main.css</pre>
+          </section>
+
+          <!-- Variables -->
+          <section id="variables" class="doc-section">
+            <h2><i class="fa-regular fa-sliders"></i> Variables</h2>
+
+            <table class="table">
+              <tr>
+                <th>Variable</th>
+                <th>Purpose</th>
+                <th>Default</th>
+              </tr>
+              <tr>
+                <td><code>--primary-500</code></td>
+                <td>Main color</td>
+                <td><span class="color-dot" style="background:#6366F1"></span> #6366F1</td>
+              </tr>
+              <tr>
+                <td><code>--accent-500</code></td>
+                <td>Accent color</td>
+                <td><span class="color-dot" style="background:#8B5CF6"></span> #8B5CF6</td>
+              </tr>
+              <tr>
+                <td><code>--font-primary</code></td>
+                <td>Body font</td>
+                <td>'Inter', sans-serif</td>
+              </tr>
+              <tr>
+                <td><code>--font-secondary</code></td>
+                <td>Heading font</td>
+                <td>'Clash Display', sans-serif</td>
+              </tr>
+            </table>
+          </section>
+
+          <!-- Dark/Light Mode -->
+          <section id="themes" class="doc-section">
+            <h2><i class="fa-regular fa-circle-half-stroke"></i> Dark/Light Mode</h2>
+
+            <pre class="code-block">
+&lt;html data-theme="dark"&gt;  &lt;!-- Default --&gt;
+&lt;html data-theme="light"&gt; &lt;!-- Light mode --&gt;
+
+// assets/js/app.js
+const themeToggle = document.getElementById('themeToggle');
+themeToggle.addEventListener('click', () => {
+    const html = document.documentElement;
+    const newTheme = html.dataset.theme === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+});</pre>
+          </section>
+
+          <!-- Sections -->
+          <section id="sections" class="doc-section">
+            <h2><i class="fa-regular fa-layer-group"></i> Sections</h2>
+
+            <div class="sections">
+              <div class="section-card">
+                <span class="num">01</span>
+                <h4>Hero Section</h4>
+                <p>Main landing section</p>
+                <code>_components.scss</code>
+              </div>
+              <div class="section-card">
+                <span class="num">02</span>
+                <h4>About Section</h4>
+                <p>Bio & skills</p>
+                <code>_components.scss</code>
+              </div>
+              <div class="section-card">
+                <span class="num">03</span>
+                <h4>Portfolio</h4>
+                <p>Projects gallery</p>
+                <code>_components.scss</code>
+              </div>
+              <div class="section-card">
+                <span class="num">04</span>
+                <h4>Services</h4>
+                <p>What I offer</p>
+                <code>_components.scss</code>
+              </div>
+              <div class="section-card">
+                <span class="num">05</span>
+                <h4>Contact</h4>
+                <p>Form & info</p>
+                <code>_components.scss</code>
+              </div>
+              <div class="section-card">
+                <span class="num">06</span>
+                <h4>Footer</h4>
+                <p>Footer section</p>
+                <code>_more.scss</code>
+              </div>
+            </div>
+          </section>
+
+          <!-- Credits -->
+          <section id="credits" class="doc-section">
+            <h2><i class="fa-regular fa-heart"></i> Credits</h2>
+
+            <table class="table">
+              <tr>
+                <th>Resource</th>
+                <th>Link</th>
+              </tr>
+              <tr>
+                <td>Font Share (Clash Display)</td>
+                <td><a href="https://www.fontshare.com">fontshare.com</a></td>
+              </tr>
+              <tr>
+                <td>Google Fonts (Inter)</td>
+                <td><a href="https://fonts.google.com">fonts.google.com</a></td>
+              </tr>
+              <tr>
+                <td>Font Awesome Icons</td>
+                <td><a href="https://fontawesome.com">fontawesome.com</a></td>
+              </tr>
+              <tr>
+                <td>Unsplash Images</td>
+                <td><a href="https://unsplash.com">unsplash.com</a></td>
+              </tr>
+            </table>
+          </section>
+
+          <!-- Support -->
+          <section id="support" class="doc-section">
+            <h2><i class="fa-regular fa-headset"></i> Support</h2>
+
+            <div class="support-card">
+              <i class="fa-regular fa-envelope"></i>
+              <h3>Email Us</h3>
+              <a href="mailto:priharshdesign@gmail.com" class="email">priharshdesign@gmail.com</a>
+              <p>Response within 24 hours</p>
+            </div>
+          </section>
+
+          <!-- Footer -->
+          <footer class="doc-footer">
+            <div class="footer-logo">
+              <svg width="32" height="32" viewBox="0 0 32 32">
+                <rect width="32" height="32" rx="6" fill="url(#footerGradient)" />
+                <path
+                  d="M9 22V9H17C20 9 22.5 11 22.5 14C22.5 17 20 19 17 19H13V22H9ZM13 13V16H16C17 16 17.5 15 17.5 14.5C17.5 13.5 17 13 16 13H13Z"
+                  fill="white" />
+                <defs>
+                  <linearGradient id="footerGradient" x1="0" y1="0" x2="32" y2="32">
+                    <stop stop-color="#6366F1" />
+                    <stop offset="1" stop-color="#8B5CF6" />
+                  </linearGradient>
+                </defs>
+              </svg>
+              <span>PortSpace</span>
+            </div>
+            <p>© 2026 PortSpace. All rights reserved.</p>
+            <p class="designer">Designed with <i class="fa-solid fa-heart"></i> by <span>PriHarhs Design</span></p>
+          </footer>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- JavaScript -->
+  <script src="js/jquery.js"></script>
+  <script>
+    $(function () {
+      // Smooth scroll
+      $('.sidebar-nav a').on('click', function (e) {
+        e.preventDefault();
+        var target = $($(this).attr('href'));
+        if (target.length) {
+          $('html, body').animate({ scrollTop: target.offset().top - 100 }, 600);
+          $('.sidebar-nav a').removeClass('active');
+          $(this).addClass('active');
+        }
+      });
+
+      // Active on scroll
+      $(window).on('scroll', function () {
+        var scrollPos = $(document).scrollTop();
+        $('.sidebar-nav a').each(function () {
+          var ref = $($(this).attr('href'));
+          if (ref.length && ref.position().top - 120 <= scrollPos && ref.position().top + ref.height() > scrollPos) {
+            $('.sidebar-nav a').removeClass('active');
+            $(this).addClass('active');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

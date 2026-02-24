@@ -1,0 +1,562 @@
+// abstracts/_mixins.scss
+// PortSpace - Premium Portfolio Template
+// Utility Mixins for Reusable Code
+
+// ============================================
+// 📱 MEDIA QUERY MIXINS
+// ============================================
+
+// Breakpoint mixin (mobile-first approach)
+@mixin breakpoint($size) {
+  @if $size ==xs {
+    @media (min-width: 480px) {
+      @content;
+    }
+  }
+
+  @else if $size ==sm {
+    @media (min-width: 640px) {
+      @content;
+    }
+  }
+
+  @else if $size ==md {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+
+  @else if $size ==lg {
+    @media (min-width: 1024px) {
+      @content;
+    }
+  }
+
+  @else if $size ==xl {
+    @media (min-width: 1280px) {
+      @content;
+    }
+  }
+
+  @else if $size ==2xl {
+    @media (min-width: 1536px) {
+      @content;
+    }
+  }
+}
+
+// Max-width breakpoints (for specific overrides)
+@mixin breakpoint-max($size) {
+  @if $size ==xs {
+    @media (max-width: 479px) {
+      @content;
+    }
+  }
+
+  @else if $size ==sm {
+    @media (max-width: 639px) {
+      @content;
+    }
+  }
+
+  @else if $size ==md {
+    @media (max-width: 767px) {
+      @content;
+    }
+  }
+
+  @else if $size ==lg {
+    @media (max-width: 1023px) {
+      @content;
+    }
+  }
+
+  @else if $size ==xl {
+    @media (max-width: 1279px) {
+      @content;
+    }
+  }
+
+  @else if $size ==2xl {
+    @media (max-width: 1535px) {
+      @content;
+    }
+  }
+}
+
+// Between breakpoints
+@mixin between($min, $max) {
+  @media (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}
+
+// ============================================
+// 🎯 FLEXBOX MIXINS
+// ============================================
+
+// Flex center
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Flex between
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// Flex column
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// Flex column center
+@mixin flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+// Flex wrap with gap
+@mixin flex-wrap($gap) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $gap;
+}
+
+// ============================================
+// 📏 GRID MIXINS
+// ============================================
+
+// Quick grid
+@mixin grid($columns, $gap) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+}
+
+// Responsive grid
+@mixin grid-responsive($min-width, $gap) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr));
+  gap: $gap;
+}
+
+// ============================================
+// 🎨 TYPOGRAPHY MIXINS
+// ============================================
+
+// Heading styles
+@mixin heading-1 {
+  font-size: var(--text-5xl);
+  font-weight: var(--font-bold);
+  line-height: var(--leading-tight);
+
+  @include breakpoint(md) {
+    font-size: var(--text-6xl);
+  }
+
+  @include breakpoint(lg) {
+    font-size: var(--text-7xl);
+  }
+}
+
+@mixin heading-2 {
+  font-size: var(--text-4xl);
+  font-weight: var(--font-bold);
+  line-height: var(--leading-tight);
+
+  @include breakpoint(md) {
+    font-size: var(--text-5xl);
+  }
+}
+
+@mixin heading-3 {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-semibold);
+  line-height: var(--leading-snug);
+}
+
+@mixin heading-4 {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-semibold);
+  line-height: var(--leading-snug);
+}
+
+// Body text variants
+@mixin text-large {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+}
+
+@mixin text-base {
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+}
+
+@mixin text-small {
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+}
+
+@mixin text-xsmall {
+  font-size: var(--text-xs);
+  line-height: var(--leading-normal);
+}
+
+// ============================================
+// 🎭 TRUNCATE TEXT
+// ============================================
+
+// Single line truncate
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Multi-line truncate
+@mixin truncate-multiline($lines) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+// ============================================
+// 💫 TRANSITIONS & ANIMATIONS
+// ============================================
+
+// Smooth hover transition
+@mixin smooth-hover {
+  transition: var(--transition-base);
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+// Fade in animation
+@mixin fade-in($duration: 0.3s) {
+  animation: fadeIn $duration var(--ease-in-out);
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+// Slide up animation
+@mixin slide-up($duration: 0.4s) {
+  animation: slideUp $duration var(--ease-out);
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+// ============================================
+// 🎨 BACKGROUND GRADIENTS
+// ============================================
+
+// Gradient text
+@mixin gradient-text($gradient: var(--gradient-1)) {
+  background: $gradient;
+  -webkit-background-clip: text;
+  
+  background-clip: text;
+}
+
+// Gradient border
+@mixin gradient-border($gradient, $border-width: 2px) {
+  border: $border-width solid transparent;
+  border-image: $gradient;
+  border-image-slice: 1;
+}
+
+// ============================================
+// 📐 POSITIONING
+// ============================================
+
+// Absolute center
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Absolute fill
+@mixin absolute-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+// Fixed fill
+@mixin fixed-fill {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+// ============================================
+// 🖼️ IMAGE/ASPECT RATIO
+// ============================================
+
+// Aspect ratio container
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  padding-bottom: ($height / $width) * 100%;
+
+  >* {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// Square aspect ratio
+@mixin square {
+  @include aspect-ratio(1, 1);
+}
+
+// ============================================
+// 🎯 PSEUDO ELEMENTS
+// ============================================
+
+// Pseudo element base
+@mixin pseudo($content: '', $display: block, $position: absolute) {
+  content: $content;
+  display: $display;
+  position: $position;
+}
+
+// Clearfix
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+// ============================================
+// 🎨 CARD STYLES
+// ============================================
+
+// Base card
+@mixin card-base {
+  background: var(--surface-1);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  transition: var(--transition-base);
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+// Glass morphism card
+@mixin card-glass {
+  background: var(--overlay-light);
+  backdrop-filter: blur(var(--blur-md));
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+}
+
+// ============================================
+// 🎯 BUTTON STYLES
+// ============================================
+
+// Base button
+@mixin button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-full);
+  font-weight: var(--font-medium);
+  transition: var(--transition-base);
+  cursor: pointer;
+  border: none;
+  outline: none;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+// Primary button
+@mixin button-primary {
+  @include button-base;
+  background: var(--primary-500);
+  color: white;
+
+  &:hover:not(:disabled) {
+    background: var(--primary-600);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-primary);
+  }
+}
+
+// Outline button
+@mixin button-outline {
+  @include button-base;
+  background: transparent;
+  border: 2px solid var(--primary-500);
+  color: var(--primary-500);
+
+  &:hover:not(:disabled) {
+    background: var(--primary-500);
+    color: white;
+  }
+}
+
+// ============================================
+// 📝 FORM ELEMENTS
+// ============================================
+
+// Input base
+@mixin input-base {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  color: var(--text-primary);
+  transition: var(--transition-base);
+
+  &:focus {
+    outline: none;
+    border-color: var(--primary-500);
+    box-shadow: 0 0 0 3px var(--primary-100);
+  }
+
+  &::placeholder {
+    color: var(--text-tertiary);
+  }
+}
+
+// ============================================
+// 🎭 DIVIDER/LINE
+// ============================================
+
+// Gradient divider
+@mixin divider($width: 100%, $height: 2px) {
+  width: $width;
+  height: $height;
+  background: var(--gradient-1);
+  border-radius: var(--radius-full);
+}
+
+// ============================================
+// 🔄 SCROLLBAR STYLING
+// ============================================
+
+// Custom scrollbar
+@mixin custom-scrollbar {
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--border-medium);
+    border-radius: var(--radius-full);
+
+    &:hover {
+      background: var(--primary-500);
+    }
+  }
+}
+
+// ============================================
+// 🎯 HOVER EFFECTS
+// ============================================
+
+// Scale on hover
+@mixin hover-scale($scale: 1.05) {
+  transition: var(--transition-base);
+
+  &:hover {
+    transform: scale($scale);
+  }
+}
+
+// Lift on hover
+@mixin hover-lift($distance: -4px) {
+  transition: var(--transition-base);
+
+  &:hover {
+    transform: translateY($distance);
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+// ============================================
+// 🎨 RIBBON/BADGE
+// ============================================
+
+// Corner ribbon
+@mixin corner-ribbon($position: top-right, $color: var(--primary-500)) {
+  position: absolute;
+  background: $color;
+  color: white;
+  padding: var(--space-1) var(--space-4);
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  z-index: 1;
+
+  @if $position ==top-right {
+    top: var(--space-4);
+    right: var(--space-4);
+  }
+
+  @else if $position ==top-left {
+    top: var(--space-4);
+    left: var(--space-4);
+  }
+
+  @else if $position ==bottom-right {
+    bottom: var(--space-4);
+    right: var(--space-4);
+  }
+
+  @else if $position ==bottom-left {
+    bottom: var(--space-4);
+    left: var(--space-4);
+  }
+}

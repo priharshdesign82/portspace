@@ -1,0 +1,821 @@
+// base/_global.scss
+// PortSpace - Premium Portfolio Template
+// Global Styles & Base Typography
+
+// ============================================
+// 🌐 CSS RESET / NORMALIZE
+// ============================================
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// ============================================
+// 📦 HTML & BODY BASE
+// ============================================
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+
+  // Prevent font inflation on mobile
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  // Font Family (Primary font from variables)
+  font-family: var(--font-primary);
+
+  // Font Settings
+  font-size: var(--text-base);
+  font-weight: var(--font-regular);
+  line-height: var(--leading-normal);
+  color: var(--text-primary);
+
+  // Background
+  background-color: var(--bg-primary);
+
+  // Smooth transitions for theme switching
+  transition: background-color var(--transition-slow),
+    color var(--transition-slow),
+    border-color var(--transition-slow);
+
+  // Overflow control
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  // Better text rendering
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  // Scroll behavior
+  scroll-behavior: smooth;
+
+  // Selection style
+  &::selection {
+    background: var(--primary-500);
+    color: var(--white);
+  }
+}
+
+// ============================================
+// 📝 TYPOGRAPHY - HEADINGS
+// ============================================
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-secondary);
+  font-weight: var(--font-bold);
+  line-height: var(--leading-tight);
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
+}
+
+h1 {
+  font-size: var(--text-5xl);
+
+  @include breakpoint(md) {
+    font-size: var(--text-6xl);
+  }
+
+  @include breakpoint(lg) {
+    font-size: var(--text-7xl);
+  }
+}
+
+h2 {
+  font-size: var(--text-4xl);
+
+  @include breakpoint(md) {
+    font-size: var(--text-5xl);
+  }
+}
+
+h3 {
+  font-size: var(--text-3xl);
+}
+
+h4 {
+  font-size: var(--text-2xl);
+}
+
+h5 {
+  font-size: var(--text-xl);
+}
+
+h6 {
+  font-size: var(--text-lg);
+}
+
+// ============================================
+// 📝 TYPOGRAPHY - TEXT ELEMENTS
+// ============================================
+
+p {
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-4);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Links
+a {
+  color: var(--primary-500);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+
+  &:hover {
+    color: var(--primary-600);
+  }
+
+  &:focus {
+    outline: 2px solid var(--primary-300);
+    outline-offset: 2px;
+  }
+}
+
+// Strong/Bold
+strong,
+b {
+  font-weight: var(--font-bold);
+  color: var(--text-primary);
+}
+
+// Emphasis
+em,
+i {
+  font-style: italic;
+}
+
+// Small text
+small {
+  font-size: var(--text-sm);
+  color: var(--text-tertiary);
+}
+
+// Mark text
+mark {
+  background: var(--primary-100);
+  color: var(--text-primary);
+  padding: 0 var(--space-1);
+  border-radius: var(--radius-sm);
+}
+
+// Code
+code,
+kbd,
+pre,
+samp {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+}
+
+code {
+  background: var(--bg-tertiary);
+  color: var(--primary-500);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+}
+
+pre {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  overflow-x: auto;
+  margin-bottom: var(--space-4);
+
+  code {
+    background: none;
+    padding: 0;
+    color: inherit;
+  }
+}
+
+// ============================================
+// 📋 LISTS
+// ============================================
+
+ul,
+ol {
+  margin-bottom: var(--space-4);
+  padding-left: var(--space-6);
+  color: var(--text-secondary);
+
+  li {
+    margin-bottom: var(--space-2);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+// Unstyled list
+ul.unstyled,
+ol.unstyled {
+  list-style: none;
+  padding-left: 0;
+
+  li {
+    margin-bottom: 0;
+  }
+}
+
+// Inline list
+ul.inline,
+ol.inline {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+
+  li {
+    margin-bottom: 0;
+  }
+}
+
+// ============================================
+// 📦 CONTAINERS
+// ============================================
+
+.container {
+  width: 100%;
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+
+  @include breakpoint(sm) {
+    padding: 0 var(--space-6);
+  }
+
+  @include breakpoint(lg) {
+    padding: 0 var(--space-8);
+  }
+}
+
+.container-fluid {
+  width: 100%;
+  padding: 0 var(--space-4);
+
+  @include breakpoint(sm) {
+    padding: 0 var(--space-6);
+  }
+
+  @include breakpoint(lg) {
+    padding: 0 var(--space-8);
+  }
+}
+
+// Container sizes
+.container-sm {
+  max-width: var(--container-sm);
+}
+
+.container-md {
+  max-width: var(--container-md);
+}
+
+.container-lg {
+  max-width: var(--container-lg);
+}
+
+.container-xl {
+  max-width: var(--container-xl);
+}
+
+.container-2xl {
+  max-width: var(--container-2xl);
+}
+
+// ============================================
+// 🎯 SECTION SPACING
+// ============================================
+
+section {
+  padding: var(--space-16) 0;
+
+  @include breakpoint(md) {
+    padding: var(--space-20) 0;
+  }
+
+  @include breakpoint(lg) {
+    padding: var(--space-24) 0;
+  }
+}
+
+.section-sm {
+  padding: var(--space-12) 0;
+}
+
+.section-lg {
+  padding: var(--space-20) 0;
+
+  @include breakpoint(md) {
+    padding: var(--space-24) 0;
+  }
+}
+
+.section-title {
+  font-size: var(--text-4xl);
+  font-weight: var(--font-bold);
+  margin-bottom: var(--space-4);
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: var(--gradient-1);
+    border-radius: var(--radius-full);
+  }
+
+  &.center {
+    display: block;
+    text-align: center;
+
+    &::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.section-subtitle {
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-8);
+  max-width: 600px;
+
+  &.center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+}
+
+// ============================================
+// 🖼️ IMAGES & MEDIA
+// ============================================
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+figure {
+  margin: 0 0 var(--space-4) 0;
+}
+
+figcaption {
+  font-size: var(--text-sm);
+  color: var(--text-tertiary);
+  margin-top: var(--space-2);
+}
+
+// ============================================
+// 🔘 BUTTONS (Base)
+// ============================================
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+
+  &:focus {
+    outline: 2px solid var(--primary-300);
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+// ============================================
+// 📝 FORM ELEMENTS (Base)
+// ============================================
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+// ============================================
+// 🔧 UTILITY CLASSES
+// ============================================
+
+// Text alignment
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+// Text colors
+.text-primary {
+  color: var(--text-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-tertiary {
+  color: var(--text-tertiary);
+}
+
+.text-brand {
+  color: var(--primary-500);
+}
+
+.text-accent {
+  color: var(--accent-500);
+}
+
+.text-success {
+  color: var(--success);
+}
+
+.text-warning {
+  color: var(--warning);
+}
+
+.text-danger {
+  color: var(--danger);
+}
+
+.text-info {
+  color: var(--info);
+}
+
+// Background colors
+.bg-primary {
+  background-color: var(--bg-primary);
+}
+
+.bg-secondary {
+  background-color: var(--bg-secondary);
+}
+
+.bg-tertiary {
+  background-color: var(--bg-tertiary);
+}
+
+.bg-brand {
+  background-color: var(--primary-500);
+}
+
+.bg-accent {
+  background-color: var(--accent-500);
+}
+
+.bg-gradient {
+  background: var(--gradient-1);
+}
+
+// Font weights
+.font-thin {
+  font-weight: var(--font-thin);
+}
+
+.font-light {
+  font-weight: var(--font-light);
+}
+
+.font-regular {
+  font-weight: var(--font-regular);
+}
+
+.font-medium {
+  font-weight: var(--font-medium);
+}
+
+.font-semibold {
+  font-weight: var(--font-semibold);
+}
+
+.font-bold {
+  font-weight: var(--font-bold);
+}
+
+.font-black {
+  font-weight: var(--font-black);
+}
+
+// Font sizes
+.text-xs {
+  font-size: var(--text-xs);
+}
+
+.text-sm {
+  font-size: var(--text-sm);
+}
+
+.text-base {
+  font-size: var(--text-base);
+}
+
+.text-lg {
+  font-size: var(--text-lg);
+}
+
+.text-xl {
+  font-size: var(--text-xl);
+}
+
+.text-2xl {
+  font-size: var(--text-2xl);
+}
+
+.text-3xl {
+  font-size: var(--text-3xl);
+}
+
+.text-4xl {
+  font-size: var(--text-4xl);
+}
+
+.text-5xl {
+  font-size: var(--text-5xl);
+}
+
+.text-6xl {
+  font-size: var(--text-6xl);
+}
+
+.text-7xl {
+  font-size: var(--text-7xl);
+}
+
+// Spacing utilities
+.m-0 {
+  margin: 0;
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.ml-0 {
+  margin-left: 0;
+}
+
+.mr-0 {
+  margin-right: 0;
+}
+
+.p-0 {
+  padding: 0;
+}
+
+.pt-0 {
+  padding-top: 0;
+}
+
+.pb-0 {
+  padding-bottom: 0;
+}
+
+.pl-0 {
+  padding-left: 0;
+}
+
+.pr-0 {
+  padding-right: 0;
+}
+
+// Visibility
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+// Screen reader only
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+// ============================================
+// 🎭 ANIMATIONS
+// ============================================
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// Animation classes
+.animate-fade-in {
+  animation: fadeIn var(--transition-slow) var(--ease-out);
+}
+
+.animate-slide-up {
+  animation: slideUp var(--transition-slow) var(--ease-out);
+}
+
+.animate-slide-down {
+  animation: slideDown var(--transition-slow) var(--ease-out);
+}
+
+.animate-slide-left {
+  animation: slideLeft var(--transition-slow) var(--ease-out);
+}
+
+.animate-slide-right {
+  animation: slideRight var(--transition-slow) var(--ease-out);
+}
+
+// ============================================
+// 📱 RESPONSIVE UTILITIES
+// ============================================
+
+// Hide on mobile
+.hide-mobile {
+  @include breakpoint-max(md) {
+    display: none !important;
+  }
+}
+
+// Hide on desktop
+.hide-desktop {
+  @include breakpoint(md) {
+    display: none !important;
+  }
+}
+
+// Show only on mobile
+.show-mobile {
+  display: none !important;
+
+  @include breakpoint-max(md) {
+    display: block !important;
+  }
+}
+
+// Show only on desktop
+.show-desktop {
+  display: none !important;
+
+  @include breakpoint(md) {
+    display: block !important;
+  }
+}
+
+// ============================================
+// 🔄 LOADING & PROGRESS
+// ============================================
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--border-light);
+  border-top-color: var(--primary-500);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// ============================================
+// 🎯 PRINT STYLES
+// ============================================
+
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  a {
+    color: black !important;
+    text-decoration: underline;
+  }
+}
